@@ -78,7 +78,7 @@ jobs:
           fi
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # v5
+        uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v5
         if: github.event_name == 'push' || github.repository == 'rpuneet/mycel'
         with:
           files: coverage.out
@@ -245,7 +245,7 @@ jobs:
           # can remove; alerting on them is permanent noise.
           ignore-unfixed: true
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v4.37.3
+        uses: github/codeql-action/upload-sarif@v4.39.1
         if: always()
         with:
           sarif_file: trivy-results.sarif

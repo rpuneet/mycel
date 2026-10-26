@@ -126,7 +126,7 @@ jobs:
           fi
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@f06c13b6b1a9625abc9e6e439d9c05a8f2190e94 # v7
+        uses: goreleaser/goreleaser-action@a4f02ab5355a589de60d917a659ce617ed19b3de # v7
         with:
           distribution: goreleaser
           version: 'v2.8.2'
@@ -196,7 +196,7 @@ jobs:
           cd dist && shasum -a 256 *.tar.gz > checksums-macos.txt
 
       - name: Upload to release
-        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v2
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v2
         with:
           tag_name: ${{ needs.prepare.outputs.tag }}
           files: |
@@ -400,7 +400,7 @@ jobs:
           esac
 
       - name: Upload to release
-        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v2
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v2
         with:
           tag_name: ${{ needs.prepare.outputs.tag }}
           files: dist/mycel-desktop_*
@@ -512,7 +512,7 @@ jobs:
           cat ../checksums-desktop.txt
 
       - name: Upload to release
-        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v2
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v2
         with:
           tag_name: ${{ needs.prepare.outputs.tag }}
           files: checksums-desktop.txt
@@ -535,7 +535,7 @@ jobs:
           output-file: sbom.spdx.json
 
       - name: Upload SBOM to release
-        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v2
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v2
         with:
           tag_name: ${{ needs.prepare.outputs.tag }}
           files: sbom.spdx.json
